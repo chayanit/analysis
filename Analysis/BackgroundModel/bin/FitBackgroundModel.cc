@@ -32,9 +32,7 @@ int main(int argc, char* argv[]) {
     ("verbose,v", po::value<int>()->default_value(0), "More verbose output.")
     ("profile,p", "Create profile likelihoods of the fit parameters.")
     ("list_parameters,l", "List parameters of the chosen fit models and exit.")
-    ("input_file,i", po::value<std::string>()
-     ->default_value(cmsswBase+"/src/Analysis/BackgroundModel/"
-                     "data/HIG14017_HighMass2012_Packed_M350_inputs.root"),
+    ("input_file,i", po::value<std::string>()->default_value(cmsswBase+"/src/Analysis/BackgroundModel/data/HIG14017_HighMass2012_Packed_M350_inputs.root"),
      "ROOT file from which input histograms are retrieved.")
     ("input_tree_file,t", po::value<std::string>(),
      "ROOT file from which input tree is retrieved. If this parameter is not "
@@ -52,9 +50,10 @@ int main(int argc, char* argv[]) {
      "[constant,] [floating]\"")
     ;
   po::variables_map vm;
-//  po::store(po::command_line_parser( argc, argv ).options(cmdLineOptions).run(), vm);
   po::store(po::command_line_parser(argc, argv).options(cmdLineOptions)
             .allow_unregistered().run(), vm);
+  po::notify(vm);
+
 
   // now add required options
   po::options_description requiredOptions("Required arguments");
@@ -66,13 +65,10 @@ int main(int argc, char* argv[]) {
     ;
   po::store(po::command_line_parser(argc, argv).options(requiredOptions)
             .allow_unregistered().run(), vm);
-//  po::store(po::command_line_parser(argc, argv).options(requiredOptions).run(), vm);
 
 
   po::options_description allOptions("Allowed arguments");
   allOptions.add(cmdLineOptions).add(requiredOptions);
-
-  po::notify(vm);
 
   // check for help flag before checking for required options
   if (vm.count("help")) {

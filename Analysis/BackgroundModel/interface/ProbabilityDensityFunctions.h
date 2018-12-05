@@ -40,11 +40,8 @@
 #include "Analysis/BackgroundModel/interface/RooRelBreitWigner.h"
 #include "Analysis/BackgroundModel/interface/RooQuadGausExp.h"
 #include "Analysis/BackgroundModel/interface/RooMyNovosibirsk.h"
-#include "Analysis/BackgroundModel/interface/RooSuperNovosibirsk.h"
 #include "Analysis/BackgroundModel/interface/RooExtendNovosibirsk.h"
-#include "Analysis/BackgroundModel/interface/RooDoubleGausExp.h"
 #include "Analysis/BackgroundModel/interface/RooPolyDijet.h"
-#include "Analysis/BackgroundModel/interface/RooSuperDiJet.h"
 
 //#include "Analysis/BackgroundModel/interface/FitContainer.h"
 #include "Analysis/BackgroundModel/interface/Tools.h"
@@ -54,7 +51,7 @@ namespace analysis {
 
   class ProbabilityDensityFunctions {
   public:
-  	ProbabilityDensityFunctions(RooWorkspace& workspace, const std::string& var_name, const bool& modify_par_names = false);
+  	ProbabilityDensityFunctions(RooWorkspace& workspace_, const std::string& var_name);
   	virtual ~ProbabilityDensityFunctions();
 
   	void setPdf(const std::string& function, const std::string& name);
@@ -70,13 +67,14 @@ namespace analysis {
 	void getNovoEfffixProd(const std::string& name);
   	void getNovoPSHighMPol4(const std::string& name);
 	void getMyNovosibirsk(const std::string& name);
-	void getSuperNovosibirsk(const std::string& name, const int& degree);
 	void getMyNovoPSProd(const std::string& name);
 	void getExtNovosibirsk(const std::string& name);
+	void getExtNovosibirskFix(const std::string& name);
 	void getExtNovoPSProd(const std::string& name);
 	void getExtNovoEffProd(const std::string& name);
-	void getSuperNovoEffProd(const std::string& name, const int& degree);
 	void getExtNovoEfffixProd(const std::string& name);
+	//void getExtNovofixEfffixProd(const std::string& name);
+	void getTransfactorExtNovoEfffixProd(const std::string& name);
 	void getExtNovoLogisticProd(const std::string& name);
 	void getExtNovoExtLogisticProd(const std::string& name);
 	void getExtNovoHypertanProd(const std::string& name);
@@ -112,14 +110,12 @@ namespace analysis {
   	void getBreitWigner(const std::string& name);
   	void getRelBreitWigner(const std::string& name);
   	void getRooQuadGausExp(const std::string& name);
-  	void getSuperDiJet(const std::string& name, const int& degree);
-  	void getSuperDiJetEffProd(const std::string& name, const int& degree);
-  	void getSuperDiJetLinearProd(const std::string& name, const int& degree);
 
   	//Section of base function that can be used in combination
   	//with more comlicated
   	void getPhaseSpace(const std::string& name);	//PhaseSpace factor
-  	void getEfficiency(const std::string& name);	//Efficiency function
+	void gettransferFactor(const std::string& name); //Transfer factor between bbnb and bbb  
+	void getEfficiency(const std::string& name);	//Efficiency function
 	void getEfficiencyFix(const std::string& name);    //Efficiency function fix parameters
 	void getLogistic(const std::string& name);
 	void getLogistic_ext1(const std::string& name);  
@@ -137,19 +133,15 @@ namespace analysis {
 
   private:
 
-
   	double peak_;
   	RooWorkspace* workspace_;
   	std::string var_;
-  	bool modify_par_names_;
   	static const std::vector<std::string> availableModels_;
-  	const int defaultNumberOfCoefficients_ = 9;
+  	const int defaultNumberOfCoefficients_ = 3;
 
   	const char* paramName_(const std::string& name, const std::string& default_name);
   	static std::unique_ptr<RooArgList>
        	getCoefficients_(const int numCoeffs, const std::string& name);
-
-  	void ModifyVarNames_(const std::string& name);
 
 
   };

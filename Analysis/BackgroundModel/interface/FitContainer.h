@@ -36,8 +36,6 @@
 #include "Analysis/BackgroundModel/interface/TreeContainer.h"
 #include "Analysis/BackgroundModel/interface/ParamModifier.h"
 #include "Analysis/BackgroundModel/interface/ProbabilityDensityFunctions.h"
-#include "Analysis/BackgroundModel/interface/RooFitQuality.h"
-#include "Analysis/Tools/interface/RooFitUtils.h"
 
 
 namespace analysis {
@@ -56,8 +54,8 @@ namespace analysis {
 
       FitContainer(const TH1* data, const TH1* signal, const TH1* background,
 		   const std::string& outputDir = defaultOutputDir_);
-      FitContainer(const TH1* data, const std::string& outputDir = defaultOutputDir_, const std::string & type = "data");
-//      FitContainer(const TH1* data, const std::string& outputDir = defaultOutputDir_);
+      //FitContainer(const TH1* data, const std::string& outputDir = defaultOutputDir_, const std::string & type = "background");
+      FitContainer(const TH1* data, const std::string& outputDir = defaultOutputDir_);
       FitContainer(TTree& data, const std::string& outputDir = defaultOutputDir_);
       FitContainer(const HistContainer& container,
 		   const std::string& outputDir = defaultOutputDir_);
@@ -75,13 +73,12 @@ namespace analysis {
       FitContainer& fitRangeMin(float min);
       FitContainer& fitRangeMax(float max);
       FitContainer& setNBins(int nbins);
-      RooWorkspace& getWorkspace();
 
       void setModel(const Type& type, const std::string& model);
       void setModel(const Type& type, const std::string& model,
                     const std::vector<ParamModifier>& modifiers);
-      std::unique_ptr<RooFitResult> backgroundOnlyFit(const std::string& model, const bool& plot_params = 0);
-      std::unique_ptr<RooFitResult> FitSignal(const std::string & model, const bool& plot_params = 0);
+      std::unique_ptr<RooFitResult> backgroundOnlyFit(const std::string& model);
+      std::unique_ptr<RooFitResult> FitSignal(const std::string & model);
 
       void profileModel(const Type& type);
       void showModels() const;
@@ -94,7 +91,9 @@ namespace analysis {
       FitContainer(const std::string& outputDir);
 
       // methods to set the fit model
-      double getPeakStart_(const Type& type,const double& max);
+      static std::unique_ptr<RooArgList>
+      getCoefficients_(const int numCoeffs, const std::string& name);
+      double getPeakStart_(const Type& type, double max);
       double getPeakStart_(const Type& type);
       double getMaxPosition_(const RooAbsData& data);
 
@@ -104,6 +103,11 @@ namespace analysis {
       std::string getOutputPath_(const std::string& subdirectory = "");
       int getNonZeroBins_(const RooAbsData& data);
       int getBlindedBins_(const RooAbsData& data, double blind_lowEdge, double blind_highEdge);
+      double chiSquare_(const RooAbsData& data, const RooCurve& fit);
+      double chiSquare_(const RooAbsData& data, const RooCurve& fit, double blind_LowEdge, double blind_HighEdge, int nFitParam);
+      // chiSquare by CA
+      double chiSquare_CA(const RooPlot& frame, const char* curvename, const char* histname, int nFitParam, double blind_lowEdge, double blind_highEdge);
+      void getNumbersPerBins_(const RooPlot& frame, const char* curvename, const char* histname, RooHist* hpull);
       bool applyModifiers_(RooAbsPdf& pdf,
                            const std::vector<ParamModifier>& modifiers);
       void makeLog_(const RooFitResult& fitResult);
@@ -147,7 +151,6 @@ namespace analysis {
 
     inline void FitContainer::Import(const RooAbsArg& inArg){ workspace_.import(inArg);}
     inline void FitContainer::Write(){ if(!written_) { workspace_.writeToFile(outRootFileName_.c_str()); written_ = true;}   }
-    inline RooWorkspace& FitContainer::getWorkspace() {return workspace_;};
 
   }
 }

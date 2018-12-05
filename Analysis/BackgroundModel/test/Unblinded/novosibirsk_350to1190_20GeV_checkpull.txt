@@ -1,0 +1,164 @@
+Fitting Background Model...
+Data events: 271583
+
+constant parameters:
+
+floating parameters (init):
+  1) 0x3eae7f0 RooRealVar::  peak1 = 425  L(50 - 500) // [GeV] "peak"
+  2) 0x3eaf100 RooRealVar::  tail1 = -0.1  L(-1 - 1)  "tail"
+  3) 0x3eaf9e0 RooRealVar:: width1 = 50  L(5 - 595) // [GeV] "width"
+
+floating parameters (final):
+  1) 0x3eb40f0 RooRealVar::  peak1 = 292.047 +/- 13.2828  L(50 - 500) // [GeV] "peak"
+  2) 0x3eb4970 RooRealVar::  tail1 = -0.814619 +/- 0.0235708  L(-1 - 1)  "tail"
+  3) 0x3eb5250 RooRealVar:: width1 = 55.6524 +/- 1.17892  L(5 - 595) // [GeV] "width"
+number of Non-Zero bins : 42
+number of blinded bins : 0
+xstart = 350
+xstop  = 1190
+chi^2 at bin 0 : 0.377525
+chi^2 at bin 1 : 0.0262888
+chi^2 at bin 2 : 0.306495
+chi^2 at bin 3 : 3.40263
+chi^2 at bin 4 : 0.0759629
+chi^2 at bin 5 : 2.16745
+chi^2 at bin 6 : 0.245429
+chi^2 at bin 7 : 0.163103
+chi^2 at bin 8 : 3.42525
+chi^2 at bin 9 : 0.904897
+chi^2 at bin 10 : 0.326627
+chi^2 at bin 11 : 0.0380023
+chi^2 at bin 12 : 1.34442
+chi^2 at bin 13 : 0.00732683
+chi^2 at bin 14 : 0.428782
+chi^2 at bin 15 : 2.3364
+chi^2 at bin 16 : 0.386827
+chi^2 at bin 17 : 2.7202
+chi^2 at bin 18 : 0.206098
+chi^2 at bin 19 : 2.043
+chi^2 at bin 20 : 0.643523
+chi^2 at bin 21 : 3.94921
+chi^2 at bin 22 : 0.0417446
+chi^2 at bin 23 : 3.3266
+chi^2 at bin 24 : 4.93066
+chi^2 at bin 25 : 1.09035
+chi^2 at bin 26 : 0.44157
+chi^2 at bin 27 : 0.176166
+chi^2 at bin 28 : 0.0887292
+chi^2 at bin 29 : 0.049602
+chi^2 at bin 30 : 0.000620261
+chi^2 at bin 31 : 2.69858e-05
+chi^2 at bin 32 : 0.386889
+chi^2 at bin 33 : 2.05706
+chi^2 at bin 34 : 0.0124573
+chi^2 at bin 35 : 0.188823
+chi^2 at bin 36 : 0.833751
+chi^2 at bin 37 : 0.0231117
+chi^2 at bin 38 : 0.786034
+chi^2 at bin 39 : 1.22407
+chi^2 at bin 40 : 0.0872726
+chi^2 at bin 41 : 0.249371
+chisq = 41.5203
+ndof  = 39
+
+Normalized chi^2: 41.5/39 = 1.1
+
+TMath::Prob(#chi^{2}_{RooFit},ndf) : 0.36
+bin 0 : M12 = 360	 data = 18392	 fit = 18447.5	 data-fit = -55.5147	 error ylow = 135.118	 error yhigh = 136.118	 pull = -0.407842
+bin 1 : M12 = 380	 data = 15141	 fit = 15127.6	 data-fit = 13.3633	 error ylow = 122.55	 error yhigh = 123.55	 pull = 0.109044
+bin 2 : M12 = 400	 data = 12305	 fit = 12335.2	 data-fit = -30.2286	 error ylow = 110.429	 error yhigh = 111.429	 pull = -0.271281
+bin 3 : M12 = 420	 data = 10257	 fit = 10044	 data-fit = 213.035	 error ylow = 100.778	 error yhigh = 101.778	 pull = 2.1139
+bin 4 : M12 = 440	 data = 8184	 fit = 8186.61	 data-fit = -2.61483	 error ylow = 89.9668	 error yhigh = 90.9668	 pull = -0.0287449
+bin 5 : M12 = 460	 data = 6587	 fit = 6689.03	 data-fit = -102.027	 error ylow = 80.6619	 error yhigh = 81.6619	 pull = -1.24939
+bin 6 : M12 = 480	 data = 5461	 fit = 5483.27	 data-fit = -22.2669	 error ylow = 73.4003	 error yhigh = 74.4003	 pull = -0.299285
+bin 7 : M12 = 500	 data = 4496	 fit = 4511.64	 data-fit = -15.637	 error ylow = 66.5541	 error yhigh = 67.5541	 pull = -0.231474
+bin 8 : M12 = 520	 data = 3633	 fit = 3745.48	 data-fit = -112.482	 error ylow = 59.7764	 error yhigh = 60.7764	 pull = -1.85074
+bin 9 : M12 = 540	 data = 3159	 fit = 3106.01	 data-fit = 52.9921	 error ylow = 55.7072	 error yhigh = 56.7072	 pull = 0.951261
+bin 10 : M12 = 560	 data = 2557	 fit = 2586.19	 data-fit = -29.1868	 error ylow = 50.0693	 error yhigh = 51.0693	 pull = -0.571513
+bin 11 : M12 = 580	 data = 2171	 fit = 2162.01	 data-fit = 8.98617	 error ylow = 46.0967	 error yhigh = 47.0967	 pull = 0.194942
+bin 12 : M12 = 600	 data = 1864	 fit = 1814.52	 data-fit = 49.4835	 error ylow = 42.677	 error yhigh = 43.677	 pull = 1.15949
+bin 13 : M12 = 620	 data = 1532	 fit = 1528.69	 data-fit = 3.3078	 error ylow = 38.644	 error yhigh = 39.644	 pull = 0.0855969
+bin 14 : M12 = 640	 data = 1269	 fit = 1292.66	 data-fit = -23.6562	 error ylow = 35.1265	 error yhigh = 36.1265	 pull = -0.654814
+bin 15 : M12 = 660	 data = 1148	 fit = 1096.97	 data-fit = 51.0312	 error ylow = 33.3858	 error yhigh = 34.3858	 pull = 1.52853
+bin 16 : M12 = 680	 data = 953	 fit = 934.108	 data-fit = 18.8917	 error ylow = 30.3747	 error yhigh = 31.3747	 pull = 0.621954
+bin 17 : M12 = 700	 data = 752	 fit = 798.06	 data-fit = -46.0603	 error ylow = 26.9272	 error yhigh = 27.9272	 pull = -1.6493
+bin 18 : M12 = 720	 data = 672	 fit = 683.998	 data-fit = -11.9977	 error ylow = 25.4278	 error yhigh = 26.4278	 pull = -0.45398
+bin 19 : M12 = 740	 data = 623	 fit = 588.031	 data-fit = 34.9686	 error ylow = 24.465	 error yhigh = 25.465	 pull = 1.42933
+bin 20 : M12 = 760	 data = 525	 fit = 507.016	 data-fit = 17.984	 error ylow = 22.4183	 error yhigh = 23.4183	 pull = 0.802199
+bin 21 : M12 = 780	 data = 481	 fit = 438.398	 data-fit = 42.6017	 error ylow = 21.4374	 error yhigh = 22.4374	 pull = 1.98726
+bin 22 : M12 = 800	 data = 384	 fit = 380.097	 data-fit = 3.90288	 error ylow = 19.1023	 error yhigh = 20.1023	 pull = 0.204315
+bin 23 : M12 = 820	 data = 298	 fit = 330.411	 data-fit = -32.4105	 error ylow = 16.7699	 error yhigh = 17.7699	 pull = -1.8239
+bin 24 : M12 = 840	 data = 327	 fit = 287.941	 data-fit = 39.0589	 error ylow = 17.5901	 error yhigh = 18.5901	 pull = 2.22051
+bin 25 : M12 = 860	 data = 235	 fit = 251.538	 data-fit = -16.5379	 error ylow = 14.8379	 error yhigh = 15.8379	 pull = -1.0442
+bin 26 : M12 = 880	 data = 230	 fit = 220.249	 data-fit = 9.75098	 error ylow = 14.674	 error yhigh = 15.674	 pull = 0.664507
+bin 27 : M12 = 900	 data = 199	 fit = 193.285	 data-fit = 5.71475	 error ylow = 13.6156	 error yhigh = 14.6156	 pull = 0.419721
+bin 28 : M12 = 920	 data = 166	 fit = 169.99	 data-fit = -3.98967	 error ylow = 12.3938	 error yhigh = 13.3938	 pull = -0.297874
+bin 29 : M12 = 940	 data = 147	 fit = 149.814	 data-fit = -2.81393	 error ylow = 11.6347	 error yhigh = 12.6347	 pull = -0.222715
+bin 30 : M12 = 960	 data = 132	 fit = 132.299	 data-fit = -0.298861	 error ylow = 11	 error yhigh = 12	 pull = -0.024905
+bin 31 : M12 = 980	 data = 117	 fit = 117.059	 data-fit = -0.0588476	 error ylow = 10.3282	 error yhigh = 11.3282	 pull = -0.00519479
+bin 32 : M12 = 1000	 data = 97	 fit = 103.769	 data-fit = -6.76911	 error ylow = 9.83185	 error yhigh = 10.8827	 pull = -0.622004
+bin 33 : M12 = 1020	 data = 78	 fit = 92.1553	 data-fit = -14.1553	 error ylow = 8.81279	 error yhigh = 9.86953	 pull = -1.43425
+bin 34 : M12 = 1040	 data = 83	 fit = 81.9852	 data-fit = 1.01478	 error ylow = 9.09204	 error yhigh = 10.147	 pull = 0.111612
+bin 35 : M12 = 1060	 data = 69	 fit = 73.0615	 data-fit = -4.06153	 error ylow = 8.28644	 error yhigh = 9.34678	 pull = -0.434538
+bin 36 : M12 = 1080	 data = 73	 fit = 65.2164	 data-fit = 7.78362	 error ylow = 8.52439	 error yhigh = 9.58304	 pull = 0.9131
+bin 37 : M12 = 1100	 data = 57	 fit = 58.3065	 data-fit = -1.30651	 error ylow = 7.52762	 error yhigh = 8.59401	 pull = -0.152025
+bin 38 : M12 = 1120	 data = 59	 fit = 52.2094	 data-fit = 6.79063	 error ylow = 7.65931	 error yhigh = 8.72456	 pull = 0.886585
+bin 39 : M12 = 1140	 data = 55	 fit = 46.8199	 data-fit = 8.18009	 error ylow = 7.39358	 error yhigh = 8.46117	 pull = 1.10638
+bin 40 : M12 = 1160	 data = 44	 fit = 42.0479	 data-fit = 1.95211	 error ylow = 6.60794	 error yhigh = 7.68351	 pull = 0.295419
+bin 41 : M12 = 1180	 data = 41	 fit = 37.8156	 data-fit = 3.18444	 error ylow = 6.3769	 error yhigh = 7.45519	 pull = 0.499371
+
+Correlation matrix of background-only fit:
+
+3x3 matrix is as follows
+
+     |      0    |      1    |      2    |
+--------------------------------------------
+   0 |          1      0.8118      0.6712 
+   1 |     0.8118           1      0.9548 
+   2 |     0.6712      0.9548           1 
+
+Eigenvectors of Correlation Matrix
+
+3x3 matrix is as follows
+
+     |      0    |      1    |      2    |
+--------------------------------------------
+   0 |     0.5417     -0.8075      0.2336 
+   1 |     0.6089      0.1853     -0.7713 
+   2 |     0.5795        0.56      0.5921 
+
+Covariance Matrix
+
+3x3 matrix is as follows
+
+     |      0    |      1    |      2    |
+--------------------------------------------
+   0 |      176.4      0.2542       10.51 
+   1 |     0.2542   0.0005556     0.02653 
+   2 |      10.51     0.02653        1.39 
+
+Eigenvectors of Covariance Matrix
+
+3x3 matrix is as follows
+
+     |      0    |      1    |      2    |
+--------------------------------------------
+   0 |     0.9982    -0.05974  -0.0005519 
+   1 |   0.001442     0.01485      0.9999 
+   2 |    0.05973      0.9981    -0.01491 
+
+
+RooWorkspace(workspace) workspace contents
+
+variables
+---------
+(mbb,peak1,tail1,weight,width1)
+
+p.d.f.s
+-------
+RooNovosibirsk::background[ x=mbb width=width1 peak=peak1 tail=tail1 ] = 0.00094814
+
+datasets
+--------
+RooDataSet::data_container(mbb)
+

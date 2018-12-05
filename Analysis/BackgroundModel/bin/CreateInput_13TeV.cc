@@ -63,9 +63,9 @@ int main(int /* argc */, char* /* argv */[]) {
     //"/nfs/dust/cms/user/chayanit/Optimization_18_08_2016/TripleBTagSelection_80X_lowMTrigger_Run2016B-PromptReco-v1_25_08_2016.root";
     //"/nfs/dust/cms/user/chayanit/2016Data_24_11_2016/TripleBTagReverseSelection_80X_lowMTrigger_Run2016BtoH-23Sep2016-v2_25_11_2016.root";
     //"/nfs/dust/cms/user/chayanit/2016Data_24_11_2016/TripleBTagSelection_80X_lowMTrigger_Run2016BtoH-23Sep2016-v2_25_11_2016.root";
-    "/nfs/dust/cms/user/chayanit/2016Data_05_01_2017/TripleBTagReverseSelection_80X_lowMTrigger_Run2016BtoH-23Sep2016-v2_05_01_2017.root";
-    //"/nfs/dust/cms/user/chayanit/2016Data_05_01_2017/TripleBTagSelection_80X_lowMTrigger_Run2016BtoH-23Sep2016-v2_05_01_2017.root";
-   
+    //"/nfs/dust/cms/user/chayanit/2016Data_05_01_2017/TripleBTagReverseSelection_80X_lowMTrigger_Run2016BtoH-23Sep2016-v2_05_01_2017.root";
+    "/nfs/dust/cms/user/chayanit/2016Data_05_01_2017/TripleBTagSelection_80X_lowMTrigger_Run2016BtoH-23Sep2016-v2_05_01_2017.root";    
+ 
   const std::string outputFileName =
     //cmsswBase+"/src/Analysis/BackgroundModel/data/Nofilter_29_06_2016/TripleBTagReverseSelection_highM_13TeV.root";
     //cmsswBase+"/src/Analysis/BackgroundModel/data/Nofilter_29_06_2016/TripleBTagReverseSelection_highM_13TeV_unblinded.root";
@@ -125,7 +125,8 @@ int main(int /* argc */, char* /* argv */[]) {
     //cmsswBase+"/src/Analysis/BackgroundModel/data/2016DataRereco_05_01_2017/TripleBTagReverseSelectionBtoH2016_13TeV_500to1700.root";
     //cmsswBase+"/src/Analysis/BackgroundModel/data/2016DataRereco_05_01_2017/TripleBTagSelectionBtoH2016_13TeV_500to1700.root";
     //cmsswBase+"/src/Analysis/BackgroundModel/data/2016DataRereco_05_01_2017/TripleBTagReverseSelectionBtoH2016_oldBtagprescale_13TeV_seed0.root";
-    cmsswBase+"/src/Analysis/BackgroundModel/data/2016DataRereco_05_01_2017/TripleBTagReverseSelectionBtoH2016_prescale_13TeV_G9.root";
+    //cmsswBase+"/src/Analysis/BackgroundModel/data/2016DataRereco_05_01_2017/TripleBTagReverseSelectionBtoH2016_prescale_13TeV_G9.root";
+    cmsswBase+"/src/Analysis/BackgroundModel/data/2016DataRereco_05_01_2017/TripleBTagSelectionBtoH2016_13TeV.root";
 
     //cmsswBase+"/src/Analysis/BackgroundModel/data/TripleBTagReverseSelection_QCD_13TeV.root";
     
@@ -140,8 +141,8 @@ int main(int /* argc */, char* /* argv */[]) {
   double mbb;
   double weight = 1.0;  // make this maybe later a product of some other weights
 
-  TRandom3 *r = new TRandom3(0); //seed 0 or 4357 default
-  double val = 1./9.;
+  //TRandom3 *r = new TRandom3(0); //seed 0 or 4357 default
+  //double val = 1./9.;
 
   //std::cout<<"val = "<<val<<std::endl;
 /*
@@ -174,7 +175,7 @@ int main(int /* argc */, char* /* argv */[]) {
   for (int i = 0; i < inputTree->GetEntriesFast(); ++i) {
     inputTree->GetEntry(i);
 
-    double random = r->Rndm(); 
+    //double random = r->Rndm(); 
 
     //2015
     //if(random > 0.125 && random < 1.0) continue;
@@ -189,13 +190,13 @@ int main(int /* argc */, char* /* argv */[]) {
     //if(random > 5*val && random < 6*val) {
     //if(random > 6*val && random < 7*val) {
     //if(random > 7*val && random < 8*val) {
-    if(random > 8*val) {
+    //if(random > 8*val) {
 
     	if(mbb > 0.)	outputTree.Fill();
     	//if(mbb >= 200. && mbb <= 650.) outputTree.Fill();
     	//if(mbb >= 350 && mbb <= 1190.) outputTree.Fill();
     	//if(mbb >= 500 && mbb <= 1700.)  outputTree.Fill();
-    }
+    //}
   }
   outputTree.Write();
 
